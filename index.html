@@ -71,21 +71,22 @@
     *{
       box-sizing: border-box;
     }
-    html, body{
+    html, body, form{
       margin: 0;
       padding: 0;
     }
+    
     #wrap{
       text-align: center;
     }
     #wrap-center{
       width: 1280px;
       display: inline-block;
-      background-color: yellow;
     }
     #header{
       text-align: left;
       position: relative;
+      height: 64px;
     }
     #header-hamburger, #header-naverpay, #header-notice{
       position: absolute;
@@ -127,7 +128,7 @@
       padding: 10px 8px;
     }
     #header-naverpay:hover::before{
-
+      left: -1px;
     }
     #header-naverpay > div{
       width: 26px;
@@ -176,32 +177,98 @@
           <!-- ::after -->
         </button>
       </div>
-      <div id="search"></div>
+      <style>
+        #search > form{
+          display: inline-flex;
+          width: 708px;
+          height: 60px;
+          border: 1px solid #03c75a;
+          border-radius: 33px;
+          text-align: left;
+        }
+        #search-svg{
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          width: 68px;
+          margin-right: 12px;
+          height: 100%;
+          padding-left: 10px;
+        }
+        #search-svg svg{
+          width: 24px;
+          height: 24px;
+          fill: #03c75a;
+        }
+        #search-input{
+          width: 480px;
+          padding: 17px 0;
+          font-size: 2rem;
+          line-height: 24px;
+          font-weight: bold;
+          border: none;
+          outline: none;
+        }
+        #search-right{
+          flex: 1;
+          display: flex;
+          align-items: stretch;
+          justify-content: flex-end;
+        }
+        #search-keyboard::before{
+          content: "";
+          display: block;
+          background-image: url(https://pm.pstatic.net/resources/asset/sp_main.89f0d213.png);
+          background-size: 434px 422px;
+          background-position: -50px -270px;
+          background-repeat: no-repeat;
+          width: 24px;
+          height: 16px;
+        }
+        #search-recent::before{
+          content: "";
+          display: block;
+          background-image: url(https://pm.pstatic.net/resources/asset/sp_main.89f0d213.png);
+          background-size: 434px 422px;
+          background-position: -323px -174px;
+          background-repeat: no-repeat;
+          width: 10px;
+          height: 6px;
+        }
+        #search-button::before{
+          content: "";
+          display: block;
+          background-image: url(https://pm.pstatic.net/resources/asset/sp_main.89f0d213.png);
+          background-size: 434px 422px;
+          background-position: -364px -213px;
+          background-repeat: no-repeat;
+          width: 25px;
+          height: 25px;
+        }
+      </style>
+      <div id="search">
+        <form action="">
+          <a id="search-svg" href="https://naver.com">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"></path></svg>
+          </a>
+          <label for="search-input" class="blind">검색어 입력</label>
+          <input id="search-input"type="text" placeholder="검색어를 입력하세요."/>
+          <div id="search-right">
+            <a href="#" id="search-keyboard">
+              <span class="blind">입력도구</span>
+            </a>
+            <a href="#" id="search-recent">
+              <span class="blind">자동완성/최근검색어펼치기</span>
+            </a>
+            <button id="search-button">
+              <div><span class="blind">검색</span></div>
+            </button>
+          </div>
+        </form>
+      </div>
       <div id="nav"></div>
       <div id="main"></div>
     </div>
   </div>
-  <h1><a href="https://www.naver.com">네이버</a></h1>
-  <h2>검색창</h2>
-  <fieldset>
-    <legend>검색</legend>
-    <input type="text">
-  </fieldset>
-  <ul>
-    <li>메일</li>
-    <li>카페</li>
-    <li>블로그</li>
-    <li>지식인</li>
-    <li>쇼핑</li>
-    <li>네이버페이</li>
-    <li>네이버쇼핑</li>
-  </ul>
-  <h2>실시간 검색어</h2>
-  <h3>연합뉴스</h3>
-  <h3>로그인</h3>
-  <h3>뉴스</h3>
-  <h3>법률</h3>
-  <h3>쇼핑</h3>
-  <h3></h3>
 </body>
 </html>
